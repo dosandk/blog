@@ -17,5 +17,7 @@ url: "http://dosandk.github.io/" # the base hostname & protocol for your site
 twitter_username: dosandk
 github_username:  dosandk
 
+exclude: [node_modules, gulpfile.js]
+
 # Build settings
 markdown: kramdown
