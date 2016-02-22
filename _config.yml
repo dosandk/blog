@@ -17,6 +17,9 @@ url: "http://dosandk.github.io/" # the base hostname & protocol for your site
 twitter_username: dosandk
 github_username:  dosandk
 
+gems:
+- jekyll-compass
+
 exclude: [node_modules, gulpfile.js]
 
 # Build settings
