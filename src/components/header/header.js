@@ -35,11 +35,11 @@ const Header = ({ siteTitle, tagline, author, contacts }) => {
             {siteTitle}
           </Link>
         </h1>
-        <SocialLinks contacts={contacts} />
+        {/*<SocialLinks contacts={contacts} />*/}
       </div>
-      <MobileSocialLinks contacts={contacts} />
+      {/*<MobileSocialLinks contacts={contacts} />*/}
       <MobilePageLinks />
-      <MobileBio author={author} />
+      {/*<MobileBio author={author} />*/}
     </header>
   )
 }

@@ -1,18 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import "bootstrap/dist/css/bootstrap.css"
-import "./index.css"
-
-import Layout from "../components/layout"
+import Layout from "../components/layout.jsx"
 import SEO from "../components/seo"
-import Sidebar from "../components/sidebar/Sidebar"
+
 import TechTag from "../components/tags/TechTag"
+
+import "./index.scss"
+// import ""
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
   const currentPage = 1
-  const postsPerPage = 3 // see limit in graphql query below
+  const postsPerPage = 10 // see limit in graphql query below
   const nextPage = (currentPage + 1).toString()
   const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage
 
@@ -32,10 +32,10 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]} />
-      <div className="index-main">
-        <div className="sidebar px-4 py-2">
-          <Sidebar />
-        </div>
+      {/*<div className="index-main">*/}
+        {/*<div className="sidebar px-4 py-2">*/}
+        {/*  <Sidebar />*/}
+        {/*</div>*/}
         <div className="post-list-main">
           {posts.map((post) => {
             const tags = post.node.frontmatter.tags
@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => {
             </div>
           }
         </div>
-      </div>
+      {/*</div>*/}
     </Layout>
   )
 }
@@ -91,7 +91,7 @@ export const pageQuery = graphql`
              }
            }
            allMarkdownRemark(
-             limit: 3
+             limit: 10
              sort: { fields: [frontmatter___date], order: DESC }
              filter: { frontmatter: { published: { eq: true } } }
            ) {

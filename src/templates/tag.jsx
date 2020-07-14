@@ -1,13 +1,20 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout.jsx"
 import SEO from "../components/seo"
 import TechTag from "../components/tags/TechTag"
+import Date from "../components/date"
 
-const ArchivePage = ({ data }) => {
+const Tag = ({ pageContext, data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
+  const { tag } = pageContext
+  const { totalCount } = data.allMarkdownRemark
+  const tagHeader = `${totalCount} post${
+    totalCount === 1 ? "" : "s"
+  } tagged with "${tag}"`
 
   const getTechTags = (tags) => {
     const techTags = []
@@ -22,24 +29,25 @@ const ArchivePage = ({ data }) => {
     return techTags
   }
 
-
   return (
     <Layout>
-      <SEO title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]}/>
       <div className="post-list-main">
-        <h2 className="heading mt-3">All Posts</h2>
+        <h2 className="heading"><i>{tagHeader}</i></h2>
         {
           posts.map((post) => {
             const tags = post.node.frontmatter.tags
+
             return (
               <div key={post.node.id} className="container mt-5">
                 <Link
                   to={post.node.fields.slug}
                   className="text-dark"
                 >
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
+                  <h2 className="heading">{post.node.frontmatter.title}</h2>
                 </Link>
-                <small className="d-block text-info"><i>Posted on {post.node.frontmatter.date}</i>
+                <small className="d-block text-info">
+                  Posted on <Date date={post.node.frontmatter.date} />
                 </small>
                 <p className="mt-3 d-inline">{post.node.excerpt}</p>
                 <Link
@@ -59,8 +67,28 @@ const ArchivePage = ({ data }) => {
   )
 }
 
+Tag.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+  }),
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      totalCount: PropTypes.number.isRequired,
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            frontmatter: PropTypes.shape({
+              title: PropTypes.string.isRequired,
+            }),
+          }),
+        }).isRequired,
+      ),
+    }),
+  }),
+}
+
 export const pageQuery = graphql`
-  query ArchiveQuery {
+  query($tag: String) {
     site {
       siteMetadata {
         title
@@ -75,9 +103,9 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 1000
+      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { eq: true } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
       edges {
@@ -87,7 +115,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date
             tags
           }
           fields {
@@ -99,5 +127,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default ArchivePage
-
+export default Tag

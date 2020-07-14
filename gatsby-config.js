@@ -46,18 +46,42 @@ module.exports = {
               classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
+              showLineNumbers: true,
+              noInlineHighlight: true,
             }
-          }, `gatsby-remark-responsive-iframe`,
+          },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              enableCustomId: true
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`
+          },
+          {
+            resolve: `gatsby-remark-interactive-gifs`,
+            options: {
+              root: `${__dirname}`,
+              src: `${__dirname}/src/gifs`,
+              dest: `${__dirname}/public/static/gifs`,
+              play: `${__dirname}/src/images/play.gif`,
+              placeholder: `${__dirname}/src/images/placeholder.gif`,
+              loading: `${__dirname}/src/images/loading.gif`,
+              relativePath: `/static/gifs`
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`
+          },
           {
             resolve: `gatsby-remark-images`,
-            options: {
+          //   options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 200,
-            },
+              // maxWidth: 400,
+            // },
           },
         ],
       },
@@ -66,8 +90,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Raleway`,
-          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+          `Roboto Condensed`,
+          // `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ]
       }
     },
@@ -83,7 +107,10 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-netlify-cms`
+    {
+      resolve: `gatsby-plugin-sass`
+    }
+    // `gatsby-plugin-netlify-cms`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
