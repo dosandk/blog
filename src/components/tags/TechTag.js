@@ -1,7 +1,7 @@
 import React from "react"
-
-import "./tags.css"
 import { Link } from "gatsby"
+
+import "./tags.scss"
 
 const TechTag = (props) => {
   const { tag, tech, name, size, color } = props
@@ -10,7 +10,7 @@ const TechTag = (props) => {
     <div className="d-inline-block p-1">
       <Link to={`/tags/${tag}/`}>
         <button
-          className="tech-tag text-white">
+          className="tech-tag">
           <p className="d-inline">{tech} </p>
           <div className="d-inline" style={{ fontSize: size, color: color }}>
             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size}

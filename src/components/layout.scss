@@ -1,17 +1,22 @@
-.index-main {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+.root {
+  min-height: 100vh;
+  background: #f3f3f3;
 }
 
-.sidebar {
-  width: 90%;
+.header {
+  height: 200px;
+  background: url('../images/bg-0.png') #f3f3f3 repeat-x;
+  background-size: 400px auto;
 }
 
-@media only screen and (max-width: 850px) {
-  .sidebar{display: none;}
-  .index-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+.main {
+  min-height: 100vh;
+  width: 1200px;
+  margin-top: -40px;
+  padding-top: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 100px;
+  background: white;
+
 }

@@ -35,14 +35,24 @@ const Layout = ({ children }) => {
       }
     `}
       render={data => (
-        <main className="p-4">
-          <div className="index-main">
-            <div className="sidebar px-4 py-2">
-              <Sidebar/>
+        <div className="root">
+          <header className="header" />
+
+          <main className="main container">
+            <div className="main-inner row">
+              <div className="col-md-9 pl-lg-5 pr-lg-5">
+                {children}
+              </div>
+              <div className="col-md-3 position-relative">
+                <Sidebar/>
+              </div>
             </div>
-            {children}
-          </div>
-        </main>
+          </main>
+
+          <footer className="footer">
+
+          </footer>
+        </div>
       )}
     />
   )

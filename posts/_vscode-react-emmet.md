@@ -2,7 +2,7 @@
 title: 'Using Emmet with React in Visual Studio Code - 2019'
 tags: ["react", "vscode"]
 published: true
-date: '2019-03-20'
+date: '2019-20-03'
 ---
 
 Curabitur tincidunt hendrerit justo. Praesent nisl dui, mollis vitae quam eu, dignissim faucibus lorem. Sed vitae erat at sem suscipit laoreet nec vel diam.

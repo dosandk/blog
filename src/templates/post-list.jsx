@@ -3,8 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout.jsx"
 import SEO from "../components/seo"
-import TechTag from "../components/tags/TechTag"
-import Date from "../components/date"
+import PostPreview from "../components/post-preview"
 
 const PostList = (props) => {
   const posts = props.data.allMarkdownRemark.edges
@@ -15,49 +14,17 @@ const PostList = (props) => {
   const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
 
-  const getTechTags = (tags) => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach((label) => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size}
-                                 color={label.color}/>)
-        }
-      })
-    })
-    return techTags
-  }
-
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
         <div className="post-list-main">
-          {posts.map((post) => {
-            const tags = post.node.frontmatter.tags
-            return (
-              <div key={post.node.id} className="container mt-5">
-                <Link
-                  to={post.node.fields.slug}
-                  className="text-dark"
-                >
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
-                </Link>
-                <small className="d-block text-info">
-                  <Date date={post.node.frontmatter.date}/>
-                </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link
-                  to={post.node.fields.slug}
-                  className="text-primary"
-                >
-                  <small className="d-inline-block ml-3"> Read full post</small>
-                </Link>
-                <div className="d-block">
-                  {getTechTags(tags)}
-                </div>
-              </div>
-            )
-          })}
+          {
+            posts.map((post) => {
+              return (
+                <PostPreview node={post.node} labels={labels} />
+              )
+            })
+          }
           <div className="text-center mt-4">
             {!isFirst && (
               <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>

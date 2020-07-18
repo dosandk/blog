@@ -1,27 +1,14 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout.jsx"
 import SEO from "../components/seo"
-import TechTag from "../components/tags/TechTag"
+
+import PostPreview from "../components/post-preview/post-preview"
 
 const ArchivePage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
   const labels = data.site.siteMetadata.labels
-
-  const getTechTags = (tags) => {
-    const techTags = []
-    tags.forEach((tag, i) => {
-      labels.forEach((label) => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} tag={label.tag} tech={label.tech} name={label.name} size={label.size}
-                                 color={label.color}/>)
-        }
-      })
-    })
-    return techTags
-  }
-
 
   return (
     <Layout>
@@ -30,29 +17,7 @@ const ArchivePage = ({ data }) => {
         <h2 className="heading mt-3">All Posts</h2>
         {
           posts.map((post) => {
-            const tags = post.node.frontmatter.tags
-            return (
-              <div key={post.node.id} className="container mt-5">
-                <Link
-                  to={post.node.fields.slug}
-                  className="text-dark"
-                >
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
-                </Link>
-                <small className="d-block text-info"><i>Posted on {post.node.frontmatter.date}</i>
-                </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link
-                  to={post.node.fields.slug}
-                  className="text-primary"
-                >
-                  <small className="d-inline-block ml-3"> Read full post</small>
-                </Link>
-                <div className="d-block">
-                  {getTechTags(tags)}
-                </div>
-              </div>
-            )
+            return <PostPreview node={post.node} labels={labels}  />
           })}
       </div>
     </Layout>
@@ -87,7 +52,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date
             tags
           }
           fields {

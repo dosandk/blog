@@ -3,8 +3,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout.jsx"
 import SEO from "../components/seo"
 import TechTag from "../components/tags/TechTag"
-import Badge from "react-bootstrap/Badge"
 import Date from "../components/date"
+
+import BackButton from "../components/back-button"
 
 const BlogPost = (props) => {
   const post = props.data.markdownRemark
@@ -24,21 +25,17 @@ const BlogPost = (props) => {
     return techTags
   }
 
-  // const formattedDate = moment(post.frontmatter.date, 'YYYY-DD-MM').format(`MMMM DD, YYYY`);
-
   return (
     <Layout>
       <SEO title={post.frontmatter.title}/>
         <div className="post-main">
           <SEO title={post.frontmatter.title}/>
 
-          <div>Back</div>
+          <BackButton />
+
           <div className="mt-3">
             <div className="text-right">
-              <Badge variant="warning">
-                <i>Published on </i>
-                <Date date={post.frontmatter.date}/>
-              </Badge>
+              <Date title="Published on" date={post.frontmatter.date}/>
             </div>
 
             <div className="d-block">

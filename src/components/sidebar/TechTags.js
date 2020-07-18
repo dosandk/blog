@@ -2,6 +2,8 @@ import React from "react"
 
 import TechTag from "../tags/TechTag"
 
+import './tech-tags.scss';
+
 const TechTags = (props) => {
     const labels = props.labels
     const posts = props.posts
@@ -41,7 +43,7 @@ const TechTags = (props) => {
 
     return (
         <>
-            <h4>Tech Topics</h4>
+            <div className="tags-title mb-3">Tech Topics</div>
             <div className="d-block">
                 {getTechTags(tags)}
             </div>
