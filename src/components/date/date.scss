@@ -1,9 +1,13 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+
 .date {
   display: inline-flex;
   align-items: center;
+  color: $gray-600;
 
   .icon-wrapper {
-    margin-top: -4px;
+    margin-top: 4px;
     padding: 0 5px;
   }
 }

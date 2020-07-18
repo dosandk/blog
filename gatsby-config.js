@@ -88,13 +88,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        fonts: [
-          `Roboto Condensed`,
-          // `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
-        ]
-      }
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

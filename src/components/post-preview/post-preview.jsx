@@ -30,7 +30,6 @@ const PostPreview = ({node, labels}) => {
         <h2 className="title">{node.frontmatter.title}</h2>
       </Link>
 
-
       <div className="date-container">
          <Date title="Published on" date={node.frontmatter.date}/>
       </div>
@@ -42,10 +41,9 @@ const PostPreview = ({node, labels}) => {
           to={node.fields.slug}
           className="text-primary bold"
         >
-          Read full post
+          <small>Read full post</small>
         </Link>
       </div>
-
 
       <div>
         {getTechTags(tags, labels)}

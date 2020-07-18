@@ -2,49 +2,17 @@
 @import './gatsby-remark-prismjs.scss';
 @import './gatsby-remark-autolink-headers.scss';
 
-$h1-font-size: 3rem;
-$h2-font-size: 2rem;
-$h3-font-size: 1.75rem;
-$h4-font-size: 1.5rem;
-$h5-font-size: 1.25rem;
-$h6-font-size: 1rem;
-
-$code-font-size: 100%;
 $code-color: #dc3545;
 
-@import "~bootstrap/scss/bootstrap.scss";
-
-h1 {
-  margin-bottom: 2rem !important;
-}
-
-h2 {
-  margin-bottom: 1.5rem !important;
-}
-
-h3 {
-  margin-bottom: 1.25rem !important;
-  color: $gray-600;
-}
-
-h4 {
-  margin-bottom: 1rem !important;
-  color: $gray-600;
-}
-
-h5 {
-  margin-bottom: 0.75rem !important;
-  color: $gray-600;
-}
-
-h6 {
-  margin-bottom: 0.5rem !important;
-  color: $gray-600;
-}
+@import "~bootstrap/scss/_mixins.scss";
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/_buttons.scss";
+@import "~bootstrap/scss/utilities";
 
 code {
-  font-family: Inconsolata,courier,monospace;
   background: #eeebeb;
   padding: 2px 5px;
   border-radius: 3%;
+  color: $code-color;
 }

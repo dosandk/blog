@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
       <div className="post-list-main">
         {
-          posts.map((post) => {
-            return <PostPreview node={post.node} labels={labels}  />
+          posts.map((post, index) => {
+            return <PostPreview key={index} node={post.node} labels={labels}  />
           })
         }
         {

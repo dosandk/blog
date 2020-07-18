@@ -11,7 +11,7 @@ const Date = ({ date, title = '' }) => {
   const formattedDate = moment(date, INCOMING_PATTERN).format(DATE_FORMAT)
 
   return (
-    <span className="date">
+    <small className="date">
       <span className="icon-wrapper">
         <AiTwotoneCalendar size="16" />
       </span>
@@ -19,7 +19,7 @@ const Date = ({ date, title = '' }) => {
       <span>{title}</span>
       {' '}
       <span>{formattedDate}</span>
-    </span>
+    </small>
   )
 }
 
