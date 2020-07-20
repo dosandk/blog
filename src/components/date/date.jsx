@@ -15,9 +15,7 @@ const Date = ({ date, title = '' }) => {
       <span className="icon-wrapper">
         <AiTwotoneCalendar size="16" />
       </span>
-      {'  '}
-      <span>{title}</span>
-      {' '}
+      <span>{title} &nbsp;</span>
       <span>{formattedDate}</span>
     </small>
   )

@@ -19,6 +19,16 @@ module.exports = {
     labels: siteConfig.labels,
   },
   plugins: [
+    // Make sure this plugin is first in the array of plugins
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-173070421-1",
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -93,19 +103,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // TODO: add some icon
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `gatsby-starter-default`,
+    //     short_name: `starter`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     // TODO: add some icon
+    //     // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sass`
     }
