@@ -109,46 +109,46 @@ for (const [index, value] of ['a', 'b', 'c'].entries()) {
 
 * в отличии от `for...of` он перебирает все свойства объектов как собственные так и унаследованные
 
-  ```javascript
-  const parent = {
-    color: 'red'
-  };
-  
-  const child = {
-    fruite: 'apple'
-  };
-  
-  child.__proto__ = parent;
-  
-  for (const prop in child) {
-    console.log(child[prop]);  
-  } 
-  
-  // 'apple'
-  // 'red'
-  ```
+```javascript
+const parent = {
+  color: 'red'
+};
+
+const child = {
+  fruite: 'apple'
+};
+
+child.__proto__ = parent;
+
+for (const prop in child) {
+  console.log(child[prop]);  
+} 
+
+// 'apple'
+// 'red'
+```
 
   Чтобы исправить, можно добавить проверку с использование метода `hasOwnProperty` который проверит собственное ли свойства:
 
-  ```javascript
-  const parent = {
-    color: 'red'
-  };
+```javascript
+const parent = {
+  color: 'red'
+};
   
-  const child = {
-    fruite: 'apple'
-  };
+const child = {
+  fruite: 'apple'
+};
   
-  child.__proto__ = parent;
+child.__proto__ = parent;
   
-  for (const prop in child) {
-    if (child.hasOwnProperty(prop)) {
-  	  console.log(child[prop]);  
-    }
-  } 
-  
-  // 'apple'
-  ```
+for (const prop in child) {
+  if (child.hasOwnProperty(prop)) {
+    console.log(child[prop]);  
+  }
+}   
+
+// 'apple'
+```
 
 Но лучше отдавать предпочтение для итерации по объектам c помощью `for...of` в связке с одним из методов:
 
@@ -156,10 +156,10 @@ for (const [index, value] of ['a', 'b', 'c'].entries()) {
 * `Object.values`
 * `Object.entries` 
 
-Они возврщают массив только собственных значений объекта
+Они возвращают массив только собственных значений объекта:
 
 ```javascript
-for (const [key, value] of Object.entries(obj)) { /* logic */}
+for (const [key, value] of Object.entries(obj)) { /* logic */}  
 for (const key of Object.keys(obj)) { /* logic */ }
 for (const value of Object.values(obj)) { /* logic */ }
 ```

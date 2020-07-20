@@ -7,7 +7,7 @@ theme.overrideThemeStyles = ({ rhythm }, options) => {
       marginLeft: rhythm(1),
     },
     'code': {
-      fontSize: `0.9rem`
+      fontSize: `0.9em`
     }
   };
 };

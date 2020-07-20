@@ -157,7 +157,7 @@ const user = {
   seyHi() {    
     this.friends.forEach(function (friend) {
       console.log(this.firstName + ' says hi 👋 to ', friend);
-    }, this);
+    }, this); // highlight-line
   }
 };
 ```
@@ -208,11 +208,11 @@ const obj = new SomeFunction(); // {}
 Дело в том, что данный подход - использование ключевого слова `new`, имел целью упростить жизнь разработчикам и делал некоторые вещи "под капотом",  а именно присваивал в `this` пустой объект и автоматически возврщал его из функции
 
 ```javascript
-  function SomeFunction () {
-    // this = {};
+function SomeFunction () {
+  // this = {};
 
-    // return this;
-  }
+  // return this;
+}
 ```
 
 И как уже можно догадаться, "arrow function" не может быть вызвана с ключевым словом `new` все по той же причине, по которой ее нельзя "прибиндить", или другими словами, использовать в связке с методами `call`, `apply`, `bind` (получим ошибку: "Uncaught TypeError: <function name> is not a constructor")
@@ -221,7 +221,7 @@ const obj = new SomeFunction(); // {}
 
 Давайте сначала рассмотрим пример c объектом в котором мы потеряем контекст:
 
-```javascript
+```javascript{numberLines: true}
 const user = {
   firstName: 'John',
   getFirstName () {
@@ -229,12 +229,12 @@ const user = {
   }
 };
 
-const getName = user.getFirstName;
+const getName = user.getFirstName; // highlight-line
 
 console.log(getName()); // undefined
 ```
 
-Мы сохранили ссылку на метод объекта `getFirstName` в переменную `getName` и попытались её вызвать.
+Мы сохранили ссылку на метод объекта `getFirstName` в переменную `getName` в строке **8** и попытались её вызвать.
 
 В результате получили `undefined`, так как JS не смог определить в контексте какого объекта мы вызвали функцию `getName`, точнее так: JS для данной функции определил контекст как глобальный объект `window`
 
@@ -277,19 +277,19 @@ console.log(getName()); // John
 
 ```javascript
 class User {
- onHandleClick = () => {
-   console.log(this.firstName);
- };
+  onHandleClick = () => {
+    console.log(this.firstName);
+  };
 
- constructor(firstName) {
-   this.firstName = firstName;
-   this.render();
-   this.initEventListeners();
- }
+  constructor(firstName) {
+    this.firstName = firstName;
+    this.render();
+    this.initEventListeners();
+  }
 
- initEventListeners() {
-   this.element.addEventListener('click', this.onHandleClick);
- }
+  initEventListeners() {
+    this.element.addEventListener('click', this.onHandleClick);
+  }
 
  removeEventListeners() {
    this.element.removeEventListener('click', this.onHandleClick);
@@ -310,31 +310,35 @@ class User {
 }
 ```
 
-## **В классах "arrow function" при инстанциировании всегда попадает на сам объект, а не на прототип объекта**
+## В классах "arrow function" всегда привязана к объекту, а не к его прототипу
 
-   ```javascript
-   class User {
-     getNameArrow = () => {
-       return this.firstName;
-     }
+При создании объекта с помощью класса, "arrow function" попадет на сам объект, а не на его прототип.
+
+Давайте взглянем на пример.
+
+```javascript
+class User {
+  getNameArrow = () => {
+    return this.firstName;
+  }
         
-     constructor (firstName) {
-       this.firstName = firstName;
-     }
+  constructor (firstName) {
+    this.firstName = firstName;
+  }
         
-     getName() {
-       return this.firstName;
-     }
-   }
-   
-   const user = new User('John');
-   
-   console.log(user);
-   ```
+  getName() {
+    return this.firstName;
+  }
+}
+    
+const user = new User('John');
+    
+console.log(user);
+```
 
-   Это можно увидеть "уронив" наш объект `user` в консоль:
+При выводе объекта в консоль, можно увидеть что "arrow function" принадлежит к свойствам созданного объекта.
 
-   ![arrow-function](../src/images/static-gifs/arrow-function.png)
+![arrow-function](../src/images/static-gifs/arrow-function.png)
    
 
 ## Вывод
