@@ -1,8 +1,8 @@
 ---
 title: 'Использование циклов в JS'
-tags: ["javascript"]
+tags: ["javascript", "loops"]
 published: true
-date: '2020-13-09'
+date: '2020-13-07'
 ---    
 
 # Использование циклов в JS

@@ -19,7 +19,7 @@ const getTechTags = (tags, labels) => {
 };
 
 const PostPreview = ({node, labels}) => {
-  const tags = node.frontmatter.tags;
+  const { tags, title } = node.frontmatter;
 
   return (
     <div key={node.id} className="container mt-5">
@@ -35,7 +35,7 @@ const PostPreview = ({node, labels}) => {
       </div>
 
       <div className="mb-3">
-        <p className="mt-3 d-inline">{node.excerpt}</p>
+        <p className="mt-3 d-inline">{node.excerpt.replace(title, '')}</p>
         {' '}
         <Link
           to={node.fields.slug}

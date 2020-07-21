@@ -2,7 +2,7 @@
 title: '"Arrow functions" Cookbook'
 tags: ["javascript"]
 published: true
-date: '2020-14-09'
+date: '2020-14-07'
 ---
 
 
