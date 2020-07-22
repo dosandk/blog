@@ -19,7 +19,7 @@ const getTechTags = (tags, labels) => {
 };
 
 const PostPreview = ({node, labels}) => {
-  const { tags, title } = node.frontmatter;
+  const { tags, title, logo, date } = node.frontmatter;
 
   return (
     <div key={node.id} className="container mt-5">
@@ -27,12 +27,14 @@ const PostPreview = ({node, labels}) => {
         to={node.fields.slug}
         className="text-dark"
       >
-        <h2 className="title">{node.frontmatter.title}</h2>
+        <h2 className="title">{title}</h2>
       </Link>
 
       <div className="date-container">
-         <Date title="Published on" date={node.frontmatter.date}/>
+        <Date title="Published on" date={date}/>
       </div>
+
+      { logo && <img src={logo} alt={title} /> }
 
       <div className="mb-3">
         <p className="mt-3 d-inline">{node.excerpt.replace(title, '')}</p>

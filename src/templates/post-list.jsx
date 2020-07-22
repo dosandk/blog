@@ -73,6 +73,7 @@ export const listQuery = graphql`
             title
             date
             tags
+            logo
           }
           fields {
             slug

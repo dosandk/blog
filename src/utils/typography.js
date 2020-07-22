@@ -13,6 +13,9 @@ theme.overrideThemeStyles = ({ rhythm }, options) => {
       fontSize: `0.9em`,
       marginLeft: rhythm(.5),
       borderLeft: '6px solid #ffc107'
+    },
+    'h1,h2,h3': {
+      lineHeight: rhythm(1.4),
     }
   };
 };
