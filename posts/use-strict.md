@@ -7,12 +7,12 @@ date: '2020-21-07'
 
 # Вам не нужен "use strict"
 
-`"use strict"` -- это директива, которая появилась в Javascript вместе со стандартом 
+`"use strict"` — это директива, которая появилась в Javascript вместе со стандартом 
 ["ECMAScript 5th Edition (ES5)"](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf) 
 в декабре 2009 года.
 
-> <small>Перечень всех стандартов javascript можно посмотреть вот по этой 
-> [ссылке](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)</small>
+> Перечень всех стандартов javascript можно посмотреть вот по этой 
+> [ссылке](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm)
 
 Её цель -- показать что код, следующий за ней, будет обработан в "строгом режиме".
 

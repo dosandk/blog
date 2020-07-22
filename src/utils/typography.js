@@ -8,6 +8,11 @@ theme.overrideThemeStyles = ({ rhythm }, options) => {
     },
     'code': {
       fontSize: `0.9em`
+    },
+    'blockquote': {
+      fontSize: `0.9em`,
+      marginLeft: rhythm(.5),
+      borderLeft: '6px solid #ffc107'
     }
   };
 };

@@ -19,9 +19,9 @@ const PostList = (props) => {
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
         <div className="post-list-main">
           {
-            posts.map((post) => {
+            posts.map(post => {
               return (
-                <PostPreview node={post.node} labels={labels} />
+                <PostPreview key={post.node.id} node={post.node} labels={labels} />
               )
             })
           }
