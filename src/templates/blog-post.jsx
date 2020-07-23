@@ -8,9 +8,10 @@ import Date from "../components/date"
 import BackButton from "../components/back-button"
 
 const BlogPost = (props) => {
+  const { original } = props.data.imageSharp
   const post = props.data.markdownRemark
   const labels = props.data.site.siteMetadata.labels
-  const tags = post.frontmatter.tags
+  const { tags } = post.frontmatter;
 
   const getTechTags = (tags) => {
     const techTags = []
@@ -29,7 +30,7 @@ const BlogPost = (props) => {
     <Layout>
       <SEO title={post.frontmatter.title}/>
         <div className="post-main">
-          <SEO title={post.frontmatter.title}/>
+          <SEO title={post.frontmatter.title} logo={original.src}/>
 
           <BackButton />
 
@@ -70,6 +71,12 @@ export const query = graphql`
         title
         date
         tags
+      }
+    }
+    imageSharp {
+      id
+      original {
+        src
       }
     }
   }

@@ -3,9 +3,12 @@ title: 'Вам не нужен "use strict"'
 tags: ["javascript", "use-strict"]
 published: true
 date: '2020-21-07'
+logo: 'logo-use-strict.png'
 ---  
 
 # Вам не нужен "use strict"
+
+![featuredimage](../src/images/logo-use-strict.png)
 
 `"use strict"` — это директива, которая появилась в Javascript вместе со стандартом 
 ["ECMAScript 5th Edition (ES5)"](https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf) 

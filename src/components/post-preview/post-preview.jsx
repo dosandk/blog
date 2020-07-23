@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Date from "../date"
 import TechTag from "../tags/TechTag"
+import Image from "../image"
 
 import './post-preview.scss'
 
@@ -34,7 +35,12 @@ const PostPreview = ({node, labels}) => {
         <Date title="Published on" date={date}/>
       </div>
 
-      { logo && <img src={logo} alt={title} /> }
+      {
+        logo &&
+          <div className="mb-3">
+            <Image name={logo} />
+          </div>
+      }
 
       <div className="mb-3">
         <p className="mt-3 d-inline">{node.excerpt.replace(title, '')}</p>
