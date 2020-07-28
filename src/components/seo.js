@@ -50,6 +50,10 @@ function SEO({ description, lang, meta, title, logo }) {
           content: metaDescription,
         },
         {
+          property: `og:url`,
+          content:`${location.href} `
+        },
+        {
           property: `og:type`,
           content: `website`,
         },

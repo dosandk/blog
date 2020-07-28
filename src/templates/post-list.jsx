@@ -17,27 +17,27 @@ const PostList = (props) => {
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
-        <div className="post-list-main">
-          {
-            posts.map(post => {
-              return (
-                <PostPreview key={post.node.id} node={post.node} labels={labels} />
-              )
-            })
-          }
-          <div className="text-center mt-4">
-            {!isFirst && (
-              <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
-                <span className="text-dark">← Previous Page</span>
-              </Link>
-            )}
-            {!isLast && (
-              <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
-                <span className="text-dark ml-5">Next Page →</span>
-              </Link>
-            )}
-          </div>
+      <div className="post-list-main">
+        {
+          posts.map(post => {
+            return (
+              <PostPreview key={post.node.id} node={post.node} labels={labels}/>
+            )
+          })
+        }
+        <div className="text-center mt-4">
+          {!isFirst && (
+            <Link to={prevPage} rel="prev" style={{ textDecoration: `none` }}>
+              <span className="text-dark">← Previous Page</span>
+            </Link>
+          )}
+          {!isLast && (
+            <Link to={nextPage} rel="next" style={{ textDecoration: `none` }}>
+              <span className="text-dark ml-5">Next Page →</span>
+            </Link>
+          )}
         </div>
+      </div>
     </Layout>
   )
 }
@@ -69,6 +69,7 @@ export const listQuery = graphql`
           excerpt(pruneLength: 200)
           html
           id
+          timeToRead
           frontmatter {
             title
             date

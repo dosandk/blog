@@ -33,9 +33,15 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allImageSharp(filter: {}) {
+        nodes {
+          id
+        }
+      }
     }
   `).then(result => {
     const posts = result.data.allMarkdownRemark.edges
+    const images = result.data.allImageSharp.nodes
 
     posts.forEach(({ node }) => {
       createPage({
@@ -84,6 +90,7 @@ exports.createPages = ({ graphql, actions }) => {
           skip: i * postsPerPage,
           numPages,
           currentPage: i + 1,
+          images
         }
       })
     })

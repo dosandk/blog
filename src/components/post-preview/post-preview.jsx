@@ -33,6 +33,8 @@ const PostPreview = ({node, labels}) => {
 
       <div className="date-container">
         <Date title="Published on" date={date}/>
+        <br/>
+        <small>Read {node.timeToRead} min</small>
       </div>
 
       {
