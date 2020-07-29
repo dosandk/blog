@@ -143,5 +143,12 @@ module.exports = {
       size: 20,
       color: "rebeccapurple",
     },
+    {
+      tag: "jest",
+      tech: "Jest",
+      name: "",
+      size: 20,
+      color: "white"
+    }
   ],
 }

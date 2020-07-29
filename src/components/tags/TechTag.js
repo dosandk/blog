@@ -16,8 +16,7 @@ const TechTag = (props) => {
             <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size}
                  style={{ fill: `${color}` }}>
               <title>{tech}</title>
-              <path
-                d={name}/>
+              <path d={name}/>
             </svg>
           </div>
         </button>
