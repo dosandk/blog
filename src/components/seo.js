@@ -60,6 +60,10 @@ function SEO({ description, lang, meta, title, logo }) {
         {
           property: `og:image`,
           content: `${location.origin}${logo}`
+        },
+        {
+          property: `og:image:secure_url`,
+          content: `${location.origin}${logo}`
         }
       ].concat(meta)}
     />

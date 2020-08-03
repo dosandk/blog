@@ -2,7 +2,7 @@
 title: 'Вам не нужен "use strict"'
 tags: ["javascript", "use-strict"]
 published: true
-date: '2020-21-07'
+date: '2020-07-21'
 logo: 'logo-use-strict.png'
 ---  
 

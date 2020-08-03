@@ -20,3 +20,7 @@ body {
 div[tabindex] {
   min-height: 100vh;
 }
+
+hr + blockquote {
+  font-style: normal;
+}

@@ -72,7 +72,10 @@ export const listQuery = graphql`
           timeToRead
           frontmatter {
             title
-            date
+            date(
+              formatString: "YYYY-DD-MM"
+              locale: "ru-RU"
+            )
             tags
             logo
           }

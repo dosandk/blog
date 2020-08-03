@@ -2,7 +2,7 @@
 title: 'DOM: Какие методы считаются устаревшими и почему?'
 tags: ["javascript", "dom"]
 published: true
-date: '2020-22-07'
+date: '2020-07-22'
 logo: ''
 ---  
 

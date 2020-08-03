@@ -34,6 +34,9 @@ module.exports = {
       resolve: `gatsby-plugin-sass`
     },
     {
+      resolve: `gatsby-plugin-catch-links`
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/posts`,

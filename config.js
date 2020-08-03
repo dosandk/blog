@@ -150,5 +150,5 @@ module.exports = {
       size: 20,
       color: "white"
     }
-  ],
+  ]
 }
