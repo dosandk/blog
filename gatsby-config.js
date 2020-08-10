@@ -5,6 +5,7 @@ const siteConfig = require("./config")
 module.exports = {
   siteMetadata: {
     url: siteConfig.url,
+    siteUrl: "http://jstips.space/",
     title: siteConfig.title,
     tagline: siteConfig.tagline,
     description: ``,
@@ -109,6 +110,9 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`
+    }
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
