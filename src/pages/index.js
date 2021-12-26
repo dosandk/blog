@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `webDevelopment`, `blog`, `graphql`]}/>
       <div className="post-list-main">
         {
           posts.map((post, index) => {
@@ -67,7 +67,7 @@ export const pageQuery = graphql`
             title
             date(
               formatString: "DD MMM YYYY"
-              locale: "ru-RU"
+              locale: "en-EN"
             )
             tags
             logo
@@ -78,7 +78,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    
   }
 `
 

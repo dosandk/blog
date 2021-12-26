@@ -1,7 +1,7 @@
 ---
 title: 'Введение в тестирование с использованием Jest'
 tags: ["javascript", "jest"]
-published: true
+published: false
 date: '2020-07-30'
 logo: 'logo-jest-intro.png'
 ---
@@ -88,5 +88,5 @@ DOM внутри браузера. А JavaScript, в свою очередь, р
 * "Jest" ничего не знает про CSS - стили элементов
 
 ### Читать далее 
-→ [Конфигурация Jest](/jest-configuration)
+→ [Конфигурация Jest](/posts/jest-configuration.md)
 

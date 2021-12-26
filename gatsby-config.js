@@ -77,18 +77,19 @@ module.exports = {
           {
             resolve: `gatsby-remark-responsive-iframe`
           },
-          {
-            resolve: `gatsby-remark-interactive-gifs`,
-            options: {
-              root: `${__dirname}`,
-              src: `${__dirname}/src/gifs`,
-              dest: `${__dirname}/public/static/gifs`,
-              play: `${__dirname}/src/images/play.gif`,
-              placeholder: `${__dirname}/src/images/placeholder.gif`,
-              loading: `${__dirname}/src/images/loading.gif`,
-              relativePath: `/static/gifs`
-            },
-          },
+          // TODO: uncomment later, after first article with gif animation
+          // {
+          //   resolve: `gatsby-remark-interactive-gifs`,
+          //   options: {
+          //     root: `${__dirname}`,
+          //     src: `${__dirname}/src/gifs`,
+          //     dest: `${__dirname}/public/static/gifs`,
+          //     play: `${__dirname}/src/images/play.gif`,
+          //     placeholder: `${__dirname}/src/images/placeholder.gif`,
+          //     loading: `${__dirname}/src/images/loading.gif`,
+          //     relativePath: `/static/gifs`
+          //   },
+          // },
           {
             resolve: `gatsby-remark-copy-linked-files`
           },
@@ -110,9 +111,9 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-feed`
-    }
+    // {
+    //   resolve: `gatsby-plugin-feed`
+    // }
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

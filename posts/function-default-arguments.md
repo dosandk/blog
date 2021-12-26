@@ -1,7 +1,7 @@
 ---
 title: 'Параметры функции по умолчанию'
 tags: ["javascript"]
-published: true
+published: false
 date: '2020-07-09'
 ---
 

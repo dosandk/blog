@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: dosandk/gatsby-starter-developer-diary
+  repo: dosandk/blog
   branch: master # Branch to update (optional; defaults to master)
 
 media_folder: static/assets

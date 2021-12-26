@@ -1,50 +1,50 @@
 .gatsby-highlight {
-    background-color: #2d2d2d;
-    border-radius: 0.3em;
-    margin: 0.5em 0 1em;
-    padding: 1.2em;
-    overflow: auto;
-    font-size: 0.9rem;
+  background-color: #2d2d2d;
+  border-radius: 0.3em;
+  margin: 0.5em 0 1em;
+  padding: 1.2em;
+  overflow: auto;
+  font-size: 0.9rem;
 
-    pre {
-        box-shadow: none !important;
+  pre {
+    box-shadow: none !important;
 
-        &[class*="language-"] {
-            background-color: transparent;
-            margin: 0;
-            padding: 0;
-            overflow: initial;
-            float: left; /* 1 */
-            min-width: 100%; /* 2 */
+    &[class*="language-"] {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      overflow: initial;
+      float: left; /* 1 */
+      min-width: 100%; /* 2 */
 
-            &.line-numbers {
-                padding: 0;
-                padding-left: 2.8em;
-                overflow: initial;
-            }
-        }
-
-        .token.operator {
-            background: transparent;
-        }
+      &.line-numbers {
+        padding: 0;
+        padding-left: 2.8em;
+        overflow: initial;
+      }
     }
+
+    .token.operator {
+      background: transparent;
+    }
+  }
 }
 
 .gatsby-highlight-code-line {
-    background-color: #366d32;
-    display: block;
-    margin-right: -1em;
-    margin-left: -1em;
-    padding-right: 1em;
-    padding-left: 0.75em;
-    border-left: 0.25em solid #94d939;
+  background-color: #366d32;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #94d939;
 }
 
 $code-color: #dc3545;
 
 code {
-    background: #eeebeb;
-    padding: 2px 5px;
-    border-radius: 3%;
-    color: $code-color;
+  background: #eeebeb;
+  padding: 2px 5px;
+  border-radius: 3%;
+  color: $code-color;
 }

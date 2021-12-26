@@ -51,8 +51,8 @@ const Sidebar = () => {
               labels {
                 tag
                 tech
-                name 
-                size 
+                name
+                size
                 color
               }
             }
@@ -80,7 +80,7 @@ const Sidebar = () => {
                 <span className="text-dark d-block py-1">Blog Home</span>
               </Link>
               <Link to="/archive">
-                <span className="text-dark d-block py-1">Archive</span>
+                <span className="text-dark d-block py-1">All posts</span>
               </Link>
             </div>
             <div className="tech-tags mt-4">

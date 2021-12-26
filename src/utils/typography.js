@@ -1,4 +1,4 @@
-import Typography from "typography"
+import Typography from 'typography'
 import theme from 'typography-theme-wordpress-2015';
 
 theme.overrideThemeStyles = ({ rhythm }, options) => {

@@ -1,7 +1,7 @@
 ---
 title: 'Использование циклов в JS'
 tags: ["javascript", "loops"]
-published: true
+published: false
 date: '2020-07-13'
 ---    
 

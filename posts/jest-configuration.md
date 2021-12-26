@@ -1,7 +1,7 @@
 ---
 title: 'Конфигурация Jest'
 tags: ["javascript", "jest"]
-published: true
+published: false
 date: '2020-08-03'
 logo: 'logo-jest-configuration.png'
 ---

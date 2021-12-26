@@ -12,7 +12,7 @@ const ArchivePage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Archive" keywords={[`gatsby`, `javascript`, `react`, `web development`, `blog`, `graphql`]}/>
+      <SEO title="All posts" keywords={[`gatsby`, `javascript`, `react`, `webDevelopment`, `blog`, `graphql`]}/>
       <div className="post-list-main">
         <h2 className="heading mt-3">All Posts</h2>
         {

@@ -17,7 +17,7 @@ const Tag = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `web development`, `node.js`, `graphql`]}/>
+      <SEO title="Home" keywords={[`gatsby`, `javascript`, `react`, `webDevelopment`, `node.js`, `graphql`]}/>
       <div className="post-list-main">
         <h2 className="heading"><i>{tagHeader}</i></h2>
         {
