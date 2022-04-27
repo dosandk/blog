@@ -24,7 +24,6 @@ date: '2022-04-27'
 | css animation            |                |         ❌          |
 | [css grid layout](/grid) |                |         ❌          |
 | css pre-processors       |                |         ❌          |
-| css pre-processors       |                |         ❌          |
 | css naming approaches    |                |         ❌          |
 | css complex selector's   |                |         ❌          |
 | css frameworks           |                |         ❌          |
