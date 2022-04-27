@@ -2,7 +2,7 @@
 
 module.exports = {
   url: "",
-  title: "Javascript Tips",
+  title: "JavaScript level up",
   tagline: "",
   copyright: "",
   author: {

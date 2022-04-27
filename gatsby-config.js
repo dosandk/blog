@@ -5,7 +5,7 @@ const siteConfig = require("./config")
 module.exports = {
   siteMetadata: {
     url: siteConfig.url,
-    siteUrl: "http://jstips.space/",
+    siteUrl: "https://blog.bootcamp.place/",
     title: siteConfig.title,
     tagline: siteConfig.tagline,
     description: ``,
